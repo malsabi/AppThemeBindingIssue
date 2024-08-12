@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppThemeBindingIssue.MainPage">
+
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center"
+                         Spacing="20">
+
+        <Grid Background="{OnIdiom Default={StaticResource Secondary}, Phone={StaticResource Primary}}"
+              HeightRequest="200"
+              WidthRequest="200">
+            <Label Text="Without AppThemeBinding" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" />
+        </Grid>
+
+        <Grid Background="{OnIdiom Default={StaticResource Secondary}, Phone={AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}}"
+              HeightRequest="200"
+              WidthRequest="200">
+            <Label Text="With AppThemeBinding" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
